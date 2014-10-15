@@ -53,21 +53,9 @@ typedef enum _TAG_ROTATIONS {
     CCW     // quarter turn counter-clockwise
 } rotation_t;
 
-
-
 /** Parity adjactments when showing developments. */
 const int cdev[4] = {2, 1, 1, 2}; // Corners in R, L, F, B.
 const int edev[4] = {1, 0, 0, 1}; // Edges in F, B,
-
-/*
-const int dev_r[] = {2, 1, 1, 2};
-const int dev_l[] = {2, 1, 1, 2};
-const int dev_f[] = {2, 1, 1, 2}; // develop corner
-const int dev_f2[] = {1, 0, 0, 1}; // develop edge
-const int dev_b[] = {2, 1, 1, 2};
-const int dev_b2[] = {1, 0, 0, 1};
-*/
-
 
 /** Corner-parity of each face. */
 const int cparity[6][4] = {
