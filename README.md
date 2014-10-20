@@ -1,8 +1,9 @@
 Sarumawashi
 ===========
 
-_Sarumawashi_ is a C++ library which manupulates 3x3x3 cube puzzles 
-(Rubik's cube). _Sarumawashi_ is a Japanese word which means Japanse 
+_Sarumawashi_ is a C++ library which manipulates 3x3x3 cube puzzles 
+(Rubik's cube). This repository includes the library and some sample codes 
+using it. _Sarumawashi_ is a Japanese word which means Japanse 
 traditional streat performings by monkeys.
 
 How to use it
