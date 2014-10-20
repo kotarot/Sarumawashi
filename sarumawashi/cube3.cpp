@@ -146,6 +146,8 @@ void Cube3::turn(const std::string symbol) {
 void Cube3::wellknown(std::string name) {
     if (name == "superflip") {
         init("U R2 F B R B2 R U2 L B2 R U' D' R2 F R' L B2 U2 F2");
+    } else if (name == "checkers") {
+        init("U2 D2 R2 L2 F2 B2");
     }
 }
 

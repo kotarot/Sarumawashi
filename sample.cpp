@@ -52,9 +52,21 @@ int main() {
     cube3->print_cubes();
     cube3->print_development();
 
+    //// Example 4 ////
+    Sarumawashi::Cube3 *cube4 = new Sarumawashi::Cube3();
+
+    // Init to the superflip.
+    cube4->wellknown("checkers");
+
+    // Shows the states.
+    cube4->print_positions();
+    cube4->print_cubes();
+    cube4->print_development();
+
     delete cube1;
     delete cube2;
     delete cube3;
+    delete cube4;
 
     return 0;
 }
