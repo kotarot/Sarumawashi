@@ -10,8 +10,6 @@
 #ifndef __CUBE3_H__
 #define __CUBE3_H__
 
-#include <string>
-#include <vector>
 #include "constants.h"
 #include "position.h"
 #include "basiccube3.h"

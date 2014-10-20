@@ -11,7 +11,6 @@
 #define __CONSTANTS_H__
 
 #include <string>
-#include <vector>
 
 namespace Sarumawashi {
 

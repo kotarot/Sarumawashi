@@ -11,8 +11,6 @@
 #ifndef __BASICCUBE3_H__
 #define __BASICCUBE3_H__
 
-#include <string>
-#include <vector>
 #include "constants.h"
 #include "position.h"
 #include "utils.h"

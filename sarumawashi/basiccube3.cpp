@@ -8,8 +8,6 @@
  */
 
 #include <cstdio>
-#include <sstream>
-#include <string>
 #include "constants.h"
 #include "basiccube3.h"
 #include "utils.h"
