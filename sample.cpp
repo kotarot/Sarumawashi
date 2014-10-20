@@ -63,10 +63,34 @@ int main() {
     cube4->print_cubes();
     cube4->print_development();
 
+    //// Example 5 ////
+    Sarumawashi::Cube3 *cube5 = new Sarumawashi::Cube3();
+
+    // Sets to the solved state.
+    cube5->init();
+
+    // Checks if the cube is solved.
+    std::cout << cube5->is_solved() << std::endl;
+
+    // Turning moves.
+    cube5->turn(Sarumawashi::L, Sarumawashi::CW);
+    cube5->turn(Sarumawashi::L, Sarumawashi::CW);
+    cube5->turn(Sarumawashi::L, Sarumawashi::CW);
+    cube5->turn(Sarumawashi::L, Sarumawashi::CW);
+    cube5->turn('D', '2');
+    cube5->turn('D', '2');
+    cube5->turn("B'");
+    cube5->turn("B'");
+    cube5->turn("B'");
+    cube5->turn("B'");
+    std::cout << cube5->is_solved() << std::endl;
+
+
     delete cube1;
     delete cube2;
     delete cube3;
     delete cube4;
+    delete cube5;
 
     return 0;
 }

@@ -71,7 +71,7 @@ bool BasicCube3::is_solved() {
                     e++;
                 } else { // corners
                     if (cpos[c].x != nx || cpos[c].y != ny ||
-                        cpos[c].y != nz || cpos[c].r % 3 != 0) {
+                        cpos[c].z != nz || cpos[c].r % 3 != 0) {
                         return false;
                     }
                     c++;
