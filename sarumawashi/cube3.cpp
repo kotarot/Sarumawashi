@@ -258,6 +258,13 @@ void Cube3::turn(const std::string symbol) {
     turn(fc, rc);
 }
 
+/** Sets the cube to a well-known state given by name. */
+void Cube3::wellknown(std::string name) {
+    if (name == "superflip") {
+        init("U R2 F B R B2 R U2 L B2 R U' D' R2 F R' L B2 U2 F2");
+    }
+}
+
 /** Sets sub-cubes from a new positions. */
 void Cube3::positions_to_cubes() {
     int c = 0, e = 0;

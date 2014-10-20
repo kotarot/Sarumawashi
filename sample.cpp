@@ -7,7 +7,6 @@
 #include <iostream>
 
 #include <cube3.h>
-#include <wellknowncube3.h>
 #include <constants.h>
 
 int main() {
@@ -43,7 +42,7 @@ int main() {
     cube2->print_development();
 
     //// Example 3 ////
-    Sarumawashi::WellKnownCube3 *cube3 = new Sarumawashi::WellKnownCube3();
+    Sarumawashi::Cube3 *cube3 = new Sarumawashi::Cube3();
 
     // Init to the superflip.
     cube3->wellknown("superflip");

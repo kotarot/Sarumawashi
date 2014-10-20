@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -O2 -Wall
 AR = ar
 ARFLAGS = rv
-OBJECTS = cube3.o wellknowncube3.o position.o
+OBJECTS = cube3.o position.o
 LIB = libsarumawashi.a
 
 $(LIB): $(OBJECTS)

@@ -58,6 +58,9 @@ public:
     /** @param face and rotation in std::string such as "U", "U'", "U2", ... */
     void turn(const std::string note);
 
+    /** Sets the cube to a well-known state given by name. */
+    void wellknown(std::string name);
+
 protected:
     /** State of the cube (positions of each corner and edge). */
     Position cpos[NUM_OF_CORNERS];
