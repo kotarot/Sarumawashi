@@ -1,8 +1,8 @@
 CXX = g++
-CXXFLAGS = -O2 -Wall
+CXXFLAGS = -O3 -Wall
 AR = ar
 ARFLAGS = rv
-OBJECTS = basiccube3.o cube3.o position.o
+OBJECTS = basiccube3.o cube3.o position.o solution.o
 LIB = libsarumawashi.a
 
 $(LIB): $(OBJECTS)

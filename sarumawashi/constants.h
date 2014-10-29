@@ -42,7 +42,8 @@ typedef struct _TAG_EDGECUBE {
 /** Face type of a cube. */
 typedef enum _TAG_FACES {
     R = 0, L, U, D, F, B,
-    NUM_OF_FACES
+    NUM_OF_FACES,
+    NOFACE = 10,
 } face_t;
 
 /** Rotation type. Number means the count of quarter clockwise rotations. */
@@ -51,6 +52,12 @@ typedef enum _TAG_ROTATIONS {
     HALF,   // half turn
     CCW     // quarter turn counter-clockwise
 } rotation_t;
+
+/** Move structure. Tupple of face and rotation. */
+typedef struct _TAG_MOVE {
+    face_t f;
+    rotation_t r;
+} move_t;
 
 /** Parity adjactments when showing developments. */
 const int cdev[4] = {2, 1, 1, 2}; // Corners in R, L, F, B.
@@ -131,6 +138,39 @@ const int8_t edgecubes[6][4][3] = {
      { 0,  1,  1},  // B: DB
      {-1,  0,  1}}, // B: BR
 };
+
+/** Default positions of each corners/edges, used to avoid the triple loop. */
+const int8_t default_pos[20][4] = {
+    // {type (c:0, e:1), z, y, x}
+    {0, -1, -1, -1}, //  0: <C> UFR
+    {1, -1, -1,  0}, //  1: <E> UF
+    {0, -1, -1,  1}, //  2: <C> ULF
+    {1, -1,  0, -1}, //  3: <E> FR
+    {1, -1,  0,  1}, //  4: <E> FL
+    {0, -1,  1, -1}, //  5: <C> DRF
+    {1, -1,  1,  0}, //  6: <E> DF
+    {0, -1,  1,  1}, //  7: <C> DFL
+    {1,  0, -1, -1}, //  8: <E> UR
+    {1,  0, -1,  1}, //  9: <E> UL
+    {1,  0,  1, -1}, // 10: <E> DR
+    {1,  0,  1,  1}, // 11: <E> DL
+    {0,  1, -1, -1}, // 12: <C> URB
+    {1,  1, -1,  0}, // 13: <E> UB
+    {0,  1, -1,  1}, // 14: <C> UBL
+    {1,  1,  0, -1}, // 15: <E> BR
+    {1,  1,  0,  1}, // 16: <E> BL
+    {0,  1,  1, -1}, // 17: <C> DBR
+    {1,  1,  1,  0}, // 18: <E> DB
+    {0,  1,  1,  1}, // 19: <C> DLB
+};
+
+/** Subcubes. */
+typedef enum _TAG_SUBCUBES {
+    SUFR, SUF, SULF, SFR, SFL, SDRF, SDF, SDFL,
+    SUR, SUL, SDR, SDL,
+    SURB, SUB, SUBL, SBR, SBL, SDBR, SDB, SDLB,
+    NUM_OF_SUBCUBES
+} subcube_t;
 
 /** Strings of corners for debugging. */
 const std::string dbg_corners[NUM_OF_CORNERS + 1] = {

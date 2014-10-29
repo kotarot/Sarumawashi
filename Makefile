@@ -1,8 +1,8 @@
 CXX = g++
-CXXFLAGS = -O2 -Wall -I./sarumawashi
+CXXFLAGS = -O3 -Wall -I./sarumawashi
 #OBJECTS = sample.o
-LDFLAGS = -L./sarumawashi -lsarumawashi
-TARGETS = sample size
+LDFLAGS = -O3 -Wall -L./sarumawashi -lsarumawashi
+TARGETS = sample size solve
 
 all: $(TARGETS)
 
@@ -11,6 +11,9 @@ sample: sample.o
 
 size: size.o
 	$(CXX) -o size size.o $(LDFLAGS)
+
+solve: solve.o
+	$(CXX) -o solve solve.o $(LDFLAGS)
 
 clean:
 	rm -f *.o $(TARGETS)

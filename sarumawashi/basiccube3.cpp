@@ -16,28 +16,18 @@ namespace Sarumawashi {
 
 /** Init the cube, make it to the solved state. */
 void BasicCube3::init() {
-    // positions
     int c = 0, e = 0;
-    for (int nz = -1; nz <= 1; nz++) {
-        for (int ny = -1; ny <= 1; ny++) {
-            for (int nx = -1; nx <= 1; nx++) {
-                if ((nx == 0 && ny == 0) || (ny == 0 && nz == 0) ||
-                    (nz == 0 && nx == 0)) { // center cubes, including core
-                    continue;
-                } else if (nx == 0 || ny == 0 || nz == 0) { // edges
-                    epos[e].x = nx;
-                    epos[e].y = ny;
-                    epos[e].z = nz;
-                    epos[e].r = 0;
-                    e++;
-                } else { // corners
-                    cpos[c].x = nx;
-                    cpos[c].y = ny;
-                    cpos[c].z = nz;
-                    cpos[c].r = 0;
-                    c++;
-                }
-            }
+    for (int i = 0; i < 20; i++) {
+        if (default_pos[i][0] == 0) { // corners
+            cpos[c].z = default_pos[i][1];
+            cpos[c].y = default_pos[i][2];
+            cpos[c].x = default_pos[i][3];
+            c++;
+        } else { // edges
+            epos[e].z = default_pos[i][1];
+            epos[e].y = default_pos[i][2];
+            epos[e].x = default_pos[i][3];
+            e++;
         }
     }
 }
@@ -57,26 +47,23 @@ void BasicCube3::init(const std::string sequence) {
 /** Checks if the cube is solved or not. */
 bool BasicCube3::is_solved() {
     int c = 0, e = 0;
-    for (int nz = -1; nz <= 1; nz++) {
-        for (int ny = -1; ny <= 1; ny++) {
-            for (int nx = -1; nx <= 1; nx++) {
-                if ((nx == 0 && ny == 0) || (ny == 0 && nz == 0) ||
-                    (nz == 0 && nx == 0)) { // center cubes, including core
-                    continue;
-                } else if (nx == 0 || ny == 0 || nz == 0) { // edges
-                    if (epos[e].x != nx || epos[e].y != ny ||
-                        epos[e].z != nz || epos[e].r % 2 != 0) {
-                        return false;
-                    }
-                    e++;
-                } else { // corners
-                    if (cpos[c].x != nx || cpos[c].y != ny ||
-                        cpos[c].z != nz || cpos[c].r % 3 != 0) {
-                        return false;
-                    }
-                    c++;
-                }
+    for (int i = 0; i < 20; i++) {
+        if (default_pos[i][0] == 0) { // corners
+            if (cpos[c].z != default_pos[i][1] ||
+                cpos[c].y != default_pos[i][2] ||
+                cpos[c].x != default_pos[i][3] ||
+                cpos[c].r % 3 != 0) {
+                return false;
             }
+            c++;
+        } else { // edges
+            if (epos[e].z != default_pos[i][1] ||
+                epos[e].y != default_pos[i][2] ||
+                epos[e].x != default_pos[i][3] ||
+                epos[e].r % 2 != 0) {
+                return false;
+            }
+            e++;
         }
     }
     return true;

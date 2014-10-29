@@ -51,11 +51,11 @@ public:
     /** @param face and rotation in std::string such as "U", "U'", "U2", ... */
     void basic_turn(const std::string note);
 
-protected:
     /** State of the cube (positions of each corner and edge). */
     Position cpos[NUM_OF_CORNERS];
     Position epos[NUM_OF_EDGES];
 
+protected:
     /** Returns vector of corners and edges on each face. */
     std::vector<corner_t> corners_on(face_t f);
     std::vector<edge_t>   edges_on(face_t f);
