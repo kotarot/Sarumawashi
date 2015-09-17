@@ -17,4 +17,3 @@ solve: solve.o
 
 clean:
 	rm -f *.o $(TARGETS)
-

@@ -14,4 +14,3 @@ $(LIB): $(OBJECTS)
 
 clean:
 	rm -f *.o *.a
-
