@@ -1,8 +1,21 @@
+# Typical
+.DS_Store
+Thumbs.db
+*.swp
+*~
+~*
+
+# Object files
 *.o
+sarumawashi/*.o
+
+# Executables etc.
 *.a
 *.exe
+*.out
 *.stackdump
 sample
-sarumawashi/*.o
+size
+solve
 sarumawashi/*.a
 
