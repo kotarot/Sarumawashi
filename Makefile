@@ -1,7 +1,6 @@
 CXX = g++
-CXXFLAGS = -O3 -Wall -I./sarumawashi
-#OBJECTS = sample.o
-LDFLAGS = -O3 -Wall -L./sarumawashi -lsarumawashi
+CXXFLAGS = -O3 -Wall -I./src
+LDFLAGS = -O3 -Wall -L./src -lsarumawashi
 TARGETS = sample size solve
 
 all: $(TARGETS)
