@@ -12,5 +12,6 @@ $(LIB): $(OBJECTS)
 #	cp *.h ../include/
 #	cp $(LIB) ../lib/
 
+.PHONY: clean
 clean:
 	rm -f *.o *.a

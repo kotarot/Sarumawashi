@@ -14,5 +14,6 @@ size: size.o
 solve: solve.o
 	$(CXX) -o solve solve.o $(LDFLAGS)
 
+.PHONY: clean
 clean:
 	rm -f *.o $(TARGETS)
