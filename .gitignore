@@ -7,14 +7,14 @@ Thumbs.db
 
 # Object files
 *.o
-sarumawashi/*.o
+src/*.o
 
 # Executables etc.
 *.a
 *.exe
 *.out
 *.stackdump
-sample
-size
-solve
-sarumawashi/*.a
+sample/sample
+sample/size
+sample/solve
+src/*.a
