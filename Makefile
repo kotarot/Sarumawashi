@@ -1,9 +1,12 @@
 CXX = g++
 CXXFLAGS = -O3 -Wall -I./src
 LDFLAGS = -O3 -Wall -L./src -lsarumawashi
-TARGETS = sample size solve
+TARGETS = sarumawashi sample size solve
 
 all: $(TARGETS)
+
+sarumawashi:
+	$(MAKE) -C src
 
 sample: sample.o
 	$(CXX) -o sample sample.o $(LDFLAGS)
@@ -17,3 +20,4 @@ solve: solve.o
 .PHONY: clean
 clean:
 	rm -f *.o $(TARGETS)
+	$(MAKE) -C src clean

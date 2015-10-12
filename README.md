@@ -15,9 +15,6 @@ To run the sample code, just type these:
 ```sh
 git clone https://github.com/kotarot/Sarumawashi.git
 cd Sarumawashi
-cd src
-make
-cd ..
 make
 ./sample
 ```
