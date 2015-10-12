@@ -273,7 +273,7 @@ int Solution::h2(const BasicCube3 &n) {
 
 /** Path (edge) cost function. */
 inline int Solution::cost(const BasicCube3 &n, const BasicCube3 &succ) {
-    // Always be one.
+    // Always returns one.
     return 1;
 }
 
