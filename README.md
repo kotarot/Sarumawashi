@@ -16,7 +16,7 @@ To run the sample code, just type these:
 git clone https://github.com/kotarot/Sarumawashi.git
 cd Sarumawashi
 make
-./sample
+./sample/sample
 ```
 
 Future works
