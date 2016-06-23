@@ -17,4 +17,5 @@ src/*.o
 sample/sample
 sample/size
 sample/solve
+sample/check_solved
 src/*.a
