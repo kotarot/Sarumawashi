@@ -55,14 +55,8 @@ void Cube3::init() {
 
 /** Init the cube with a given sequence. */
 void Cube3::init(const std::string sequence) {
-    std::vector<std::string> moves;
-
     init();
-    moves = split(sequence, ' ');
-    for (std::vector<std::string>::iterator i = moves.begin();
-         i != moves.end(); i++) {
-        turn(*i);
-    }
+    perform_sequence(sequence);
 }
 
 /** Checks if the cube is solved or not. */
@@ -140,6 +134,17 @@ void Cube3::turn(const char fc, const char rc) {
 void Cube3::turn(const std::string symbol) {
     basic_turn(symbol);
     positions_to_cubes();
+}
+
+/** Performs given sequence of moves on the cube. */
+void Cube3::perform_sequence(const std::string sequence) {
+    std::vector<std::string> moves;
+
+    moves = split(sequence, ' ');
+    for (std::vector<std::string>::iterator i = moves.begin();
+	 i != moves.end(); i++) {
+	turn(*i);
+    }
 }
 
 /** Sets the cube to a well-known state given by name. */
