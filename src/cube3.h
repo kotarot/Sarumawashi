@@ -42,6 +42,9 @@ public:
     /** @param face and rotation in std::string such as "U", "U'", "U2", ... */
     void turn(const std::string note);
 
+    /** Performs given sequence of moves on the cube. */
+    void perform_sequence(const std::string sequence);
+
     /** Sets the cube to a well-known state given by name. */
     void wellknown(std::string name);
 

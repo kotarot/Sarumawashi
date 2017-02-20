@@ -84,6 +84,26 @@ int main() {
     cube5->turn("B'");
     cube5->turn("B'");
     std::cout << cube5->is_solved() << std::endl;
+    //// Example 6 ////
+    Sarumawashi::Cube3 *cube6 = new Sarumawashi::Cube3();
+    
+    // Sets the cube with a while-space separated sequence string.
+    cube6->init("R' U R");
+
+    //Shows the states
+    cube6->print_positions();
+    cube6->print_cubes();
+    cube6->print_development();
+    std::cout << cube6->is_solved() << std::endl;
+
+    //Performs sequence of moves
+    cube6->perform_sequence("R' U' R");
+
+    //Shows the states
+    cube6->print_positions();
+    cube6->print_cubes();
+    cube6->print_development();
+    std::cout << cube6->is_solved() << std::endl;
 
 
     delete cube1;
@@ -91,6 +111,7 @@ int main() {
     delete cube3;
     delete cube4;
     delete cube5;
+    delete cube6;
 
     return 0;
 }
